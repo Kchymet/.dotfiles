@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
     use({ 'doums/darcula', as = 'darcula' })
     -- vim.cmd('colorscheme darcula')
 
+    use('nvim-neotest/nvim-nio')
     use({ 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } })
     use('nvim-treesitter/nvim-treesitter-context')
 
