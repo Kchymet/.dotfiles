@@ -80,4 +80,5 @@ return require('packer').startup(function(use)
         end
     }
     use({ "folke/trouble.nvim" })
+    use { 'Weissle/persistent-breakpoints.nvim' }
 end)
