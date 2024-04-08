@@ -17,11 +17,15 @@ return require('packer').startup(function(use)
 
     -- rose-pine theme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
-    vim.cmd('colorscheme rose-pine')
+    -- vim.cmd('colorscheme rose-pine')
 
     -- Darcula (to looks like Jetbrains)
     use({ 'doums/darcula', as = 'darcula' })
     -- vim.cmd('colorscheme darcula')
+
+    -- VSCode (Dark Themes)
+    use('martinsione/darkplus.nvim')
+    -- vim.cmd('colorscheme darkplus')
 
     use('nvim-neotest/nvim-nio')
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
