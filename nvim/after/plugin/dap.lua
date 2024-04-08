@@ -31,6 +31,10 @@ vim.keymap.set('n', '<Leader>ds', function()
     widgets.centered_float(widgets.scopes)
 end)
 
+require('mason-nvim-dap').setup({
+    ensure_installed = {"delve", "python"}
+})
+
 local dapgo = require("dap-go")
 dapgo.setup(
     {
@@ -47,7 +51,7 @@ dapgo.setup(
             -- to start the process in a random available port
             port = "${port}",
             -- additional args to pass to dlv
-            args = {}
+            args = { "-tags=all_tests,unit_tests,race_sensitive_tests" }
         },
     }
 )
