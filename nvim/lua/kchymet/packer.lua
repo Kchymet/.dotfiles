@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- icons for nerdfonts
+    use('nvim-tree/nvim-web-devicons')
     -- rose-pine theme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     -- vim.cmd('colorscheme rose-pine')
@@ -77,5 +79,5 @@ return require('packer').startup(function(use)
             }
         end
     }
-
+    use({ "folke/trouble.nvim" })
 end)
