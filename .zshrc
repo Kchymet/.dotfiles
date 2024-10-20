@@ -117,7 +117,11 @@ alias vim=nvim
 
 FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-bindkey -s ^f "tmux neww tmux-sessionizer\n"
+session_finder() {
+    tmux neww tmux-sessionizer
+}
+zle -N session_finder
+bindkey ^f session_finder
 
 # This needs to be after completion defintions to prevent reloading compinit
 source $ZSH/oh-my-zsh.sh
