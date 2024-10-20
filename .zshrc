@@ -123,6 +123,11 @@ session_finder() {
 zle -N session_finder
 bindkey ^f session_finder
 
+# zsh-vi-mode overwrites this to provide emacs-like bindings, but we revert here.
+function zvm_after_lazy_keybindings() {
+    bindkey ^f session_finder
+}
+
 # This needs to be after completion defintions to prevent reloading compinit
 source $ZSH/oh-my-zsh.sh
 
