@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
     -- vim.cmd('colorscheme darkplus')
 
     use('nvim-neotest/nvim-nio')
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    use({ 'nvim-treesitter/nvim-treesitter', branch = 'master', run = ':TSUpdate' })
     use('nvim-treesitter/nvim-treesitter-context')
 
     use('nvim-treesitter/playground')
