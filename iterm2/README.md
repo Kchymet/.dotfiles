@@ -37,15 +37,18 @@ Applied to the **Default** profile unless noted:
 
 | Setting | Value | Why |
 | --- | --- | --- |
-| Font (ASCII + non-ASCII) | CaskaydiaCove Nerd Font Mono 14 | glyphs/devicons for nvim, tmux |
+| Font | CaskaydiaCove Nerd Font Mono 12 | glyphs/devicons for nvim, tmux |
 | Use separate non-ASCII font | off | one font renders everything |
-| Scrollback | unlimited | don't lose output |
+| Ligatures / italic / bold | on | |
+| Separate light & dark colors | on | light theme (bg #fafafa) in light mode, dark in dark mode |
+| Scrollback | 1000 lines | |
 | Terminal type | xterm-256color | truecolor-friendly |
-| Left/Right Option key | Esc+ (meta) | Alt bindings in tmux/zsh/nvim |
+| Left/Right Option key | Normal | |
 | Mouse reporting | on | |
-| Bell | silent, no visual flash | |
-| Cursor | solid box, no blink | |
-| Default window | 120 × 32 | |
+| Bell | audible + visual | |
+| Cursor | solid, no blink | |
+| Transparency | ~32% | |
+| Default window | 80 × 25 | |
 | Prompt on quit (app) | off | |
 | Scrollbar (app) | hidden | |
 | Copy on select (app) | on | |
