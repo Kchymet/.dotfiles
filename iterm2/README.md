@@ -1,39 +1,40 @@
 # iTerm2 settings
 
-Standardized iTerm2 preferences, checked in for reuse across machines via
-iTerm2's native "load preferences from a custom folder" feature.
+A good **baseline** iTerm2 profile, checked in as a starting point. It is
+*copied into place* per machine rather than live-synced — so different machines
+can diverge (different profiles, tweaks) without affecting this repo.
 
-## Activate on a machine
+## Install on a machine
 
-iTerm2 must be **fully quit** first (it overwrites the setting on exit):
+iTerm2 must be **fully quit** first (it overwrites its prefs file on exit):
 
 ```sh
 # 1. Quit iTerm2 (Cmd-Q)
-# 2. From any other terminal:
+# 2. From another terminal (e.g. Terminal.app):
 ~/programming/kchymet/.dotfiles/iterm2/install.sh
-# 3. Open iTerm2 — it now loads prefs from this folder.
+# 3. Open iTerm2.
 ```
 
-`install.sh` just sets the two bootstrap keys in the local domain:
+`install.sh` backs up any existing prefs, then copies
+`com.googlecode.iterm2.plist` to `~/Library/Preferences/` and clears the prefs
+cache. After that, iTerm2 uses its normal preferences location — this machine is
+independent of the repo. Re-run any time to reset to the baseline.
 
+## Updating the baseline
+
+This is intentionally a one-way starting point, not a sync. To refresh the
+checked-in baseline from a machine you like:
+
+```sh
+cp ~/Library/Preferences/com.googlecode.iterm2.plist \
+   ~/programming/kchymet/.dotfiles/iterm2/com.googlecode.iterm2.plist
+plutil -convert xml1 ~/programming/kchymet/.dotfiles/iterm2/com.googlecode.iterm2.plist
+# then commit
 ```
-defaults write com.googlecode.iterm2 PrefsCustomFolder <this folder>
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-```
 
-To do it in the GUI instead: Preferences → General → Preferences →
-check "Load preferences from a custom folder or URL" → select this folder.
+## What's in the baseline
 
-## Keeping the repo in sync
-
-Once iTerm2 is loading from this folder, enable
-Preferences → General → Preferences → "Save changes to folder when iTerm2
-quits" so GUI tweaks are written back to `com.googlecode.iterm2.plist`. Then
-just commit the changed plist.
-
-## What's standardized
-
-Applied to the **Default** profile unless noted:
+Default profile:
 
 | Setting | Value | Why |
 | --- | --- | --- |
